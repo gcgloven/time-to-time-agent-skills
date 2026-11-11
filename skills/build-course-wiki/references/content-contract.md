@@ -42,3 +42,24 @@ Exercise these cases during development as applicable:
 6. Partial processing: show numerator and denominator, disclose sampled QA, and avoid claiming complete course coverage.
 7. Review requested before publication: produce a preview/artifact without deployment or audience change until authorized.
 
+
+## Presentation and delivery records
+
+Keep evidence data separate from UI decisions so a redesigned page cannot silently change provenance.
+
+- `output_mode`: multi-page wiki or curated webpage; rationale and selected scope.
+- `content_id`, `content_type`, `title`, `body`, source IDs/locators, and `evidence_kind`: source quotation, paraphrase, independent explanation, inference, or supplemental example.
+- `page_id`, route/anchor, section order, parent/index relationships, and related concept IDs.
+- Presentation specification: page template, initially visible content, optional disclosures, diagram/text alternatives, citation placement, and mobile treatment.
+- Reader state when relevant: selected slide ID, matching note ID, verified video mapping, alignment confidence, and URL/deep-link representation.
+- QA record: check, target page/state, viewport or device, expected result, observed result, pass/fail/not-run, limitations, and recheck after fixes.
+- Delivery record: artifact or URL, output mode, build/run instructions, source coverage, blocked stages, review status, and published versus preview-only status.
+
+## End-to-end acceptance cases
+
+8. Extraction and synthesis complete but no UI implemented: report an intermediate result, not a finished wiki.
+9. Curated single-page output: define a clear reading order, section navigation where useful, source provenance, and responsive presentation without forcing a multi-page course layout.
+10. Coordinated slide reader: changing slides changes the matching notes, deep links restore the selected slide, keyboard navigation works, and Back/Forward stays coherent.
+11. Video unavailable or only approximately aligned: preserve slide/notes use, disclose the gap or uncertainty, and never claim exact synchronization.
+12. Narrow screen or long equation: inspect actual rendering, avoid clipped content, and preserve access to citations and controls.
+

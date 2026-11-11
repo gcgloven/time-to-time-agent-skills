@@ -1,5 +1,5 @@
 interface:
   display_name: "Build Course Wiki"
-  short_description: "Turn course sources into grounded self-learning wikis"
-  default_prompt: "Use $build-course-wiki to turn these lectures and slides into a source-grounded self-learning wiki."
+  short_description: "Extract, synthesize, design, and build learning websites"
+  default_prompt: "Use $build-course-wiki to extract and synthesize these course sources, define the UI and content presentation, and deliver a verified wiki or curated webpage."
 

@@ -1,69 +1,82 @@
 # Time-to-Time Agent Skills
 
-A small collection of reusable agent workflows.
+A growing curation of useful agent and subagent skills, collected from time to time.
 
-## Build Course Wiki
+Each skill is an independent workflow with its own instructions, usage guide, and supporting resources. This repository is the collection, not a single-purpose tool. Choose the skills that fit your work.
 
-![Lecture slides, video, and transcript sources become an organized, source-linked learning wiki.](assets/build-course-wiki.webp)
+## Skill catalog
 
-[**Build Course Wiki**](skills/build-course-wiki/) turns lecture slides, readings, and authentic video transcripts into a source-grounded self-learning wiki. It guides an agent through source verification, concise executive summaries, detailed slide notes, original concept diagrams, evidence-backed slide/video alignment, and accessible static-site delivery.
+| Skill | What it helps with | Guide | Instructions |
+| --- | --- | --- | --- |
+| Build Course Wiki | Extract and synthesize course sources, define the UI, and deliver a verified wiki or curated webpage. | [Usage and installation](skills/build-course-wiki/README.md) | [SKILL.md](skills/build-course-wiki/SKILL.md) |
 
-The workflow is course-, framework-, and host-independent. Missing transcripts stay visibly missing; approximate alignment is labeled; source coverage and validation are reported honestly. Public source availability is not treated as permission to republish full decks or transcripts.
+The catalog lists only skills available in this repository today. New skills belong alongside existing ones under `skills/`.
 
-- [Skill instructions](skills/build-course-wiki/SKILL.md)
-- [Content and evidence contract](skills/build-course-wiki/references/content-contract.md)
-- [Overview and background](https://gcgloven.github.io/knowledge/build-course-wiki/)
+<a id="build-course-wiki"></a>
 
-## Install
+For the wiki workflow, see the [Build Course Wiki guide](skills/build-course-wiki/README.md).
 
-Review the skill before installation. It contains instructions and a reference document, not an executable site generator.
+## Install a skill
+
+Review the selected skill's instructions and requirements before installing. Skills guide an agent; they do not supply every tool, service, or permission a task may need.
 
 ### Skills CLI
 
-From your intended project directory:
-
-```sh
-npx skills add gcgloven/time-to-time-agent-skills --skill build-course-wiki
-```
-
-Choose the target agent in the interactive prompts. To target Codex explicitly:
-
-```sh
-npx skills add gcgloven/time-to-time-agent-skills --skill build-course-wiki -a codex
-```
-
-To inspect discovery without installing:
+List available skills without installing them:
 
 ```sh
 npx skills add gcgloven/time-to-time-agent-skills --list
 ```
 
-The CLI currently requires Node.js 22.20 or later. Installation defaults to the current project; add `-g` only if you want a user-wide installation. These commands use the [official Skills CLI installation syntax](https://github.com/vercel-labs/skills/blob/main/docs/commands.md), checked on 2026-11-11. This is direct installation from GitHub, **not a claim that the skill is listed or approved in a marketplace**.
+Install a specific skill by its catalog name. For example:
 
-### Download without the CLI
+```sh
+npx skills add gcgloven/time-to-time-agent-skills --skill build-course-wiki
+```
 
-1. Open this repository's **Code** menu and choose **Download ZIP**, then extract it. Alternatively, clone it with `git clone https://github.com/gcgloven/time-to-time-agent-skills.git`.
-2. Copy the complete `skills/build-course-wiki` folder, including `references/` and `agents/`, into the skills directory supported by your agent. Consult its current documentation rather than copying only `SKILL.md`.
-3. For a project-local Codex installation, the destination is `.agents/skills/build-course-wiki/` in that project. Do not overwrite an existing installation without reviewing or backing it up.
-4. Open your agent in that project and ask it to use `build-course-wiki`. Follow your client's skill refresh instructions if it has not discovered the folder yet.
+Choose your agent in the prompts, or append `-a codex` to target Codex. Installation is project-local by default; add `-g` only for a user-wide installation. Run project-local commands from the intended project directory.
 
-See the CLI's [supported agents and installation paths](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) for other clients. A GitHub download does not automatically install a skill into a hosted ChatGPT account.
+The CLI currently requires Node.js 22.20 or later. Syntax and paths were checked against the official [CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md), [agent paths](https://github.com/vercel-labs/skills/blob/main/docs/agents.md), and [runtime requirement](https://github.com/vercel-labs/skills/blob/main/package.json) on 2026-11-11. This is direct installation from GitHub, not a claim of marketplace listing or approval.
 
-## Example request
+### Manual installation
 
-> Use build-course-wiki to create a self-learning wiki from these lecture PDFs and official video links. Start with lectures 1–3. Include brief summaries, concept diagrams, slide-level notes, review questions, and a source coverage page. Use actual transcripts only; show any gaps. Prepare a reviewable preview before publishing.
+1. Use **Code → Download ZIP** and extract it, or clone this repository:
+   ```sh
+   git clone https://github.com/gcgloven/time-to-time-agent-skills.git
+   ```
+2. Copy the complete `skills/<skill-name>/` folder into your agent's supported skills directory, including any references, scripts, assets, and agent metadata. Do not copy only `SKILL.md`.
+3. For project-local Codex use, copy it to `.agents/skills/<skill-name>/`. Review or back up an existing installation before replacing it.
+4. Follow your client's refresh instructions, then ask it to use the selected skill by name.
 
-Provide the course/version, source files or URLs, target audience, depth, and destination when known. PDF extraction, transcription, browsing, coding, and hosting tools depend on the agent environment and are not bundled here.
+See each skill's guide for a concrete example and requirements. A GitHub download does not automatically install skills into a hosted ChatGPT account.
+
+## Use a skill
+
+Open its guide, provide the requested inputs, and ask your agent to use the skill's name. Review its planned actions and outputs; installing a skill does not grant publishing, sharing, or account access permissions.
+
+<a id="example-request"></a>
+
+[Build Course Wiki example request](skills/build-course-wiki/README.md#example-request)
 
 ## Layout
 
 ```text
+README.md                         Collection overview and catalog
+CONTRIBUTING.md                   How to add and validate a skill
 skills/
   build-course-wiki/
-    SKILL.md
-    agents/openai.yaml
+    README.md                     Skill overview, installation, and examples
+    SKILL.md                      Portable agent instructions
+    agents/openai.yaml            Optional client display metadata
     references/content-contract.md
+    references/ui-presentation-contract.md
+assets/
+  build-course-wiki.webp           Existing illustration URL, kept stable
 ```
 
-The portable entry point follows the [Agent Skills format](https://agentskills.io/specification). The optional `agents/openai.yaml` supplies display metadata for clients that support it.
+Skill instructions follow the [Agent Skills format](https://agentskills.io/specification). Client-specific metadata stays with its skill; the collection has no root `SKILL.md` that would merge every workflow into one.
+
+## Add another skill
+
+See [Contributing](CONTRIBUTING.md) for the folder contract and validation checklist. Keep new skills independent and add a catalog entry only when their files are present.
 
