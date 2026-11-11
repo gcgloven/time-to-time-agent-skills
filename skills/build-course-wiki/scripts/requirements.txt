@@ -1,0 +1,2 @@
+# PDF text extraction and synthetic PDF regression tests. Other pipeline scripts use Python stdlib.
+pypdf==6.21.4

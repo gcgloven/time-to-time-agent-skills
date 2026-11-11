@@ -95,3 +95,7 @@ Record actual pages, viewports, states, results, and untested cases. Recheck def
 
 A finished result includes an implemented wiki or curated webpage, not only source extraction and prose. Include the source manifest, structured lesson content, UI brief, runnable artifact or verified preview, and honest QA/coverage report. Publishing remains separate from preview delivery and must respect the user's authorization and requested review.
 
+
+## Optional scroll-following variant
+
+When explicitly selected, apply [scroll-reader-contract.md](scroll-reader-contract.md): scrolling source-slide cards drives matching notes and the canonical selected-slide state. The reference template is replaceable presentation code, not a mandatory visual language. Adapt it using user preferences or another UI skill, then test the same behavioral acceptance criteria.

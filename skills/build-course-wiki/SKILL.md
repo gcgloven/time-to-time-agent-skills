@@ -15,6 +15,12 @@ Deliver the full pipeline: **source inventory → data extraction → synthesis 
 - Use the relevant PDF, presentation, software-engineering, and Sites skills and their available tools for implementation as needed. Keep this workflow independent of a particular course, framework, and hosting provider. Identify unavailable capabilities before promising extraction or publication.
 - Record the selected scope, inputs, output format, audience, review gates, and acceptance checks in a short delivery plan.
 
+## Bundled implementation resources
+
+- For a requested scroll-synchronized slide/notes experience, read [references/scroll-reader-contract.md](references/scroll-reader-contract.md). Use [assets/reader-template/index.html](assets/reader-template/index.html) as an optional functional starting point, not a fixed design. Customize HTML, CSS, JavaScript, or framework to the user’s tastes and relevant UI skills while preserving the behavioral contract. Do not select this reader automatically for every wiki. Read [references/reader-template.md](references/reader-template.md) for its data schema, run commands, and regression tests.
+- For real PDF/caption extraction and structural checks, read [references/extraction-and-validation.md](references/extraction-and-validation.md) and use the bundled scripts; record their dependencies and limitations.
+- For a complete original sample and nested-path publishing guidance, read [references/worked-example.md](references/worked-example.md). Keep example data separate from real course evidence.
+
 ## 2. Inventory, extract, and normalize sources
 
 1. Build a source manifest with stable IDs, titles, lecture IDs, original URLs, version/date, source type, access status, provenance, rights information, and extraction status. Use the schema in [references/content-contract.md](references/content-contract.md).
@@ -66,5 +72,3 @@ Deliver the full pipeline: **source inventory → data extraction → synthesis 
 - Present a reviewable preview or artifact, scope/coverage, source limitations, rights caveats, and validation results. Honor any review-before-publish request; obtain any required approval before deployment or audience changes.
 - Deliver the runnable wiki or curated webpage, its verified preview/artifact/link, source manifest, structured content, UI brief, and concise QA/coverage report. Include run/build instructions when source code is delivered. State exactly what is completed, missing, sampled, untested, and published versus only prepared; retain records for corrections.
 - If implementation, rendering, or hosting is unavailable, deliver the completed intermediate artifacts and identify the blocked stage. Do not call a plan, Markdown-only synthesis, or unverified URL a finished website.
-
-

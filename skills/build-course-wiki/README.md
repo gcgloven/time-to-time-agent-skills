@@ -23,7 +23,7 @@ The workflow is course-, framework-, and host-independent. Missing transcripts s
 
 ## Install
 
-Review the instructions first. This skill contains instructions and a reference document, not an executable site generator.
+Review the instructions first. This skill includes workflow instructions, executable extraction and validation helpers, an optional editable reader template, original sample data, and regression tests. It is not an automatic course crawler or a substitute for source review.
 
 From your intended project directory:
 
@@ -37,7 +37,7 @@ Choose the target agent in the prompts. For Codex explicitly:
 npx skills add gcgloven/time-to-time-agent-skills --skill build-course-wiki -a codex
 ```
 
-For manual installation, copy this complete folder, including `references/` and `agents/`, to your agent's skills directory. The project-local Codex destination is `.agents/skills/build-course-wiki/`. Do not overwrite an existing installation without review or backup.
+For manual installation, copy this complete folder, including `references/`, `scripts/`, `assets/`, and `agents/`, to your agent's skills directory. The project-local Codex destination is `.agents/skills/build-course-wiki/`. Do not overwrite an existing installation without review or backup.
 
 See the [collection installation guide](../../README.md#install-a-skill) for runtime requirements, scope, discovery, and supported-client documentation.
 
@@ -49,7 +49,7 @@ Provide the course/version, source files or URLs, target audience, depth, and de
 
 ## Requirements and boundaries
 
-- PDF extraction, transcription, browsing, coding, and hosting tools depend on the agent environment and are not bundled here.
+- Python 3.10+ and the pinned `scripts/requirements.txt` dependency support the included PDF extractor. Caption parsing and structural validation use Python's standard library. Optional rasterization uses Poppler. Browser tests require Node.js, Playwright, and Chromium. Browsing, speech transcription, and hosting are environment-provided.
 - Use actual accessible sources. If a transcript is unavailable, keep the notes slide-grounded and disclose the gap.
 - Review source rights before reproducing slides, figures, or transcript excerpts.
 - Building a preview does not authorize publishing it or changing its audience.
@@ -65,3 +65,29 @@ Provide the course/version, source files or URLs, target audience, depth, and de
 
 The illustration remains at its existing repository asset URL so older links continue to work; it is not required to run the skill.
 
+
+## Optional scroll-synchronized reader
+
+Choose this variant when requested; do not force it on every wiki. Scrolling source slides updates corresponding notes, selection, navigation, and deep links. The HTML/CSS/JS is a functional reference that you can redesign to the user's taste or with another UI skill. The behavioral specification stays authoritative; fonts, colors, components, layout, and framework are not fixed.
+
+- [Behavior and renderer specification](references/scroll-reader-contract.md)
+- [Template schema, setup, tests, and limitations](references/reader-template.md)
+- [Original runnable template](assets/reader-template/index.html)
+- [Extraction dependencies and validation](references/extraction-and-validation.md)
+- [Full synthetic worked example and deployment guidance](references/worked-example.md)
+
+Generate a full local example, starting in this skill folder:
+
+```sh
+python -m pip install -r scripts/requirements.txt
+python scripts/build_example.py /tmp/course-example-reader
+python -m http.server 8000 --directory /tmp/course-example-reader
+```
+
+Open `http://localhost:8000/`. The example actually extracts generated PDF and VTT fixtures, validates provenance and locators, then adapts authored synthesis to the reader. All demo content is original and synthetic. It does not contain a real course transcript or claim video synchronization. Publishing remains a separate authorized action.
+
+Run `python scripts/test_pipeline.py` and the browser commands in the template reference. PDF.js, OCR, audio transcription, multi-lecture switching, and live video synchronization are not bundled implementations. Keep those limits visible and test your final customized deployment.
+
+## Validation status
+
+On 2026-11-11, eight Python regression tests, the synthetic end-to-end build, optional Poppler page rendering, JavaScript syntax checks, skill validation, and relative documentation links passed. The browser regression suite is included but **was not executed successfully in the authoring environment**: Chromium startup was restricted and the separate browser could not reach the local preview server. Desktop/mobile visual behavior and scroll synchronization therefore still require running the documented browser checks. No live demo deployment is claimed.

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source-grounded reader demo</title><link rel="stylesheet" href="./reader.css"></head>
+<body>
+<a class="skip" href="#notes">Skip to notes</a>
+<header id="reader-header"><h1 id="course-title">Course reader</h1><p id="course-description">Loading original demonstration content…</p>
+<nav aria-label="Slide navigation"><button id="previous" disabled>Previous</button><label for="slide-index">Slide</label><select id="slide-index" disabled><option>Loading…</option></select><button id="next" disabled>Next</button><span id="progress"></span></nav></header>
+<main id="reader" aria-busy="true"><section class="pane-wrap"><h2 class="pane-heading">Source slides</h2><div id="slides" class="pane" tabindex="0" role="region" aria-label="Scrollable source slides"></div></section><section class="pane-wrap"><h2 class="pane-heading">Study notes</h2><div id="notes" class="pane" tabindex="0" role="region" aria-label="Scrollable study notes"></div></section></main>
+<p id="status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+<p id="error" role="alert" hidden></p>
+<noscript>This reader needs JavaScript. Consult the original sources or provide a static notes export alongside this page.</noscript>
+<script type="module" src="./reader.js" data-source="./demo-data.json"></script>
+</body></html>

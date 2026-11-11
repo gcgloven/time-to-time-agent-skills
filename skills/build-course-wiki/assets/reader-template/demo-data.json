@@ -1,0 +1,72 @@
+{
+  "title": "Understanding a queue",
+  "description": "Original demo \u00b7 scroll either pane to keep slides and notes aligned.",
+  "sources": [
+    {
+      "id": "original-demo",
+      "title": "Original demo source and provenance",
+      "url": "./demo-source.html",
+      "type": "synthetic",
+      "rights": "Original example, reusable with this skill",
+      "extraction_status": "not applicable"
+    }
+  ],
+  "lectures": [
+    {
+      "id": "demo-queue",
+      "title": "A queue in three steps"
+    }
+  ],
+  "slides": [
+    {
+      "id": "queue-1",
+      "lecture_id": "demo-queue",
+      "source_id": "original-demo",
+      "pdf_page": 1,
+      "title": "Observe a queue",
+      "keyIdea": "A queue stores arrivals until a worker can serve them.",
+      "explanation": [
+        "Imagine a desk receiving one card each minute. Each card waits until the desk is free. This original toy example explains the distinction between arrival and service.",
+        "The source picture contains three cards and one desk. Count only the cards waiting, not the card already being served.",
+        "Study question: if the worker serves two cards per minute and one new card arrives per minute, what happens to an existing backlog? State your assumptions before answering."
+      ],
+      "caveat": "Original synthetic demonstration. No course slides, transcript, or measured data are reproduced.",
+      "media": {
+        "url": "./media/queue-1.svg",
+        "alt": "A queue stores arrivals until a worker can serve them."
+      }
+    },
+    {
+      "id": "queue-2",
+      "lecture_id": "demo-queue",
+      "source_id": "original-demo",
+      "pdf_page": 2,
+      "title": "Track the balance",
+      "keyIdea": "Next backlog = current backlog + arrivals \u2212 completed service.",
+      "explanation": [
+        "Start with three waiting cards. Two new cards arrive, and the desk completes one card. The resulting backlog is four cards.",
+        "This is an accounting identity for the stated interval, not a prediction of random arrivals. Keep the counting boundary consistent.",
+        "Worked example: 3 + 2 \u2212 1 = 4. If there is no backlog, completed service cannot exceed available work."
+      ],
+      "caveat": "Original synthetic demonstration. No course slides, transcript, or measured data are reproduced.",
+      "media": {
+        "url": "./media/queue-2.svg",
+        "alt": "Next backlog = current backlog + arrivals \u2212 completed service."
+      }
+    },
+    {
+      "id": "queue-3",
+      "lecture_id": "demo-queue",
+      "source_id": "original-demo",
+      "pdf_page": 3,
+      "title": "Name the uncertainty",
+      "keyIdea": "A toy example does not establish a real service rate.",
+      "explanation": [
+        "A diagram can illustrate a mechanism without providing measurement evidence. Do not treat illustrative quantities as observations.",
+        "No transcript or video is supplied in this demo. These notes are original supplemental explanations, not instructor speech.",
+        "Review question: which extra measurements would you need before estimating waiting time in a real queue?"
+      ],
+      "caveat": "Original synthetic demonstration. No course slides, transcript, or measured data are reproduced."
+    }
+  ]
+}
