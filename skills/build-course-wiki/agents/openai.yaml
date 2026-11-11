@@ -1,0 +1,5 @@
+interface:
+  display_name: "Build Course Wiki"
+  short_description: "Turn course sources into grounded self-learning wikis"
+  default_prompt: "Use $build-course-wiki to turn these lectures and slides into a source-grounded self-learning wiki."
+
