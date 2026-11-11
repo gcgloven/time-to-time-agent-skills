@@ -66,6 +66,14 @@ Provide the course/version, source files or URLs, target audience, depth, and de
 The illustration remains at its existing repository asset URL so older links continue to work; it is not required to run the skill.
 
 
+## Reader screenshot
+
+![CS2680 Week 01 reader with week navigation, PDF page 4 on the left, and matching research-priority study notes on the right.](assets/cs2680-reader-example.jpg)
+
+Captured from the [live CS2680 study reader](https://gcgloven.github.io/knowledge/cs2680-study/weeks/week-01.html#1_intro:4) on 2026-11-11. This is a separate, customized example, **not a screenshot of the bundled template** or evidence that its browser tests passed. The screenshot illustrates the side-by-side slide/notes experience; navigation and scroll behavior are defined in the [reader contract](references/scroll-reader-contract.md). Fonts, colors, components, layout, and framework can be redesigned to suit the user.
+
+The visible slide is from the [original course deck, PDF page 4](https://cs2680.com/slides/1_intro.pdf#page=4); copyright remains with its authors. This screenshot is a UI reference, not a license to redistribute course materials. For a reusable, public-safe starting point, use the original synthetic demo below.
+
 ## Optional scroll-synchronized reader
 
 Choose this variant when requested; do not force it on every wiki. Scrolling source slides updates corresponding notes, selection, navigation, and deep links. The HTML/CSS/JS is a functional reference that you can redesign to the user's taste or with another UI skill. The behavioral specification stays authoritative; fonts, colors, components, layout, and framework are not fixed.
